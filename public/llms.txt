@@ -1,0 +1,42 @@
+# Collegesera
+
+> Collegesera (https://collegesera.com) is India's premier college search and higher education admissions portal. It provides comprehensive, verified information on colleges, courses, fee structures, cutoffs, placements, scholarships, and entrance examinations across Tamil Nadu, Karnataka, and across India.
+
+Collegesera enables students and parents to discover top-rated colleges, compare institutions side-by-side, download official brochures, and apply for verified admissions and merit scholarships.
+
+## Key Landing Pages
+
+- [Top MBA Colleges in Coimbatore](https://collegesera.com/top-mba-colleges-in-coimbatore): Leading MBA and PGDM business schools in Coimbatore with fee structures, TANCET/MAT cutoffs, and placement stats.
+- [Top Engineering Colleges in Coimbatore](https://collegesera.com/top-engineering-colleges-in-coimbatore): Comprehensive guide to top B.E./B.Tech institutions in Coimbatore, Anna University counseling (TNEA), fees, and recruitment.
+- [Autonomous Engineering Colleges in Coimbatore](https://collegesera.com/autonomous-engineering-colleges-in-coimbatore): Premier autonomous engineering institutes with autonomous curriculum, modern labs, and high placement records.
+- [Top Engineering Colleges in Salem](https://collegesera.com/top-engineering-colleges-in-salem): Top engineering colleges in Salem district offering engineering and technology programs with admission details.
+- [NIRF Ranked Engineering Colleges in Coimbatore](https://collegesera.com/nirf-ranked-engineering-colleges-in-coimbatore): Colleges officially ranked under the Ministry of Education's National Institutional Ranking Framework (NIRF).
+- [Top Paramedical Colleges in Coimbatore](https://collegesera.com/top-paramedical-colleges-in-coimbatore): Allied health science and paramedical colleges offering B.Sc Nursing, BPT, B.Pharm, Radiology, and Medical Laboratory Technology.
+- [Top Occupational Therapy Colleges in Coimbatore](https://collegesera.com/top-occupational-therapy-colleges-in-coimbatore): Accredited Bachelor of Occupational Therapy (BOT) programs with clinical hospital affiliations.
+- [Scholarship for MBA in Coimbatore](https://collegesera.com/scholarship-for-mba-in-coimbatore): Merit-based, entrance test, government, and institution-specific scholarships for MBA aspirants.
+- [Top 10 MBA Colleges in Coimbatore](https://collegesera.com/top-10-mba-colleges-in-coimbatore): Curated editorial ranking of the 10 best business schools in Coimbatore.
+
+## Academic Streams & Degree Programs
+
+- [Engineering & Technology](https://collegesera.com/colleges/engineering): B.E., B.Tech, and M.Tech colleges covering CSE, AI & Data Science, ECE, Mechanical, IT, and emerging engineering disciplines.
+- [Management (MBA & PGDM)](https://collegesera.com/colleges/mba): Master of Business Administration programs specializing in Marketing, Finance, HR, Operations, Business Analytics, and Logistics.
+- [Universities](https://collegesera.com/colleges/universities): Deemed, State, Central, and Private universities offering multi-disciplinary undergraduate and postgraduate degrees.
+- [Arts, Science & Commerce](https://collegesera.com/colleges/arts): Premier colleges offering B.Com, B.Sc, BBA, BCA, BA, and postgraduate research programs.
+- [Paramedical & Allied Health](https://collegesera.com/colleges/paramedical): Healthcare degrees preparing clinical therapists, laboratory specialists, pharmacists, and nursing professionals.
+- [Medical Colleges](https://collegesera.com/colleges/medical): MBBS, BDS, AYUSH, and medical sciences institutions.
+- [All Degree Programs](https://collegesera.com/programs): Directory of professional diplomas, undergraduate (UG), and postgraduate (PG) degrees.
+
+## Admissions & Entrance Examinations
+
+- [Exams Directory](https://collegesera.com/exams): Exhaustive guide to national and state-level entrance exams, registration dates, syllabus, and results.
+- [TNEA Counseling Guide](https://collegesera.com/exams/tnea): Tamil Nadu Engineering Admissions counseling, cutoff trends, rank lists, and seat allotment procedures.
+- [TANCET & CEETA-PG](https://collegesera.com/exams/tancet): Tamil Nadu Common Entrance Test for MBA, MCA, and ME/M.Tech admissions in Tamil Nadu colleges.
+- [NEET UG](https://collegesera.com/exams/neet): National Eligibility cum Entrance Test details, cutoff marks, and counseling timeline.
+- [JEE Main](https://collegesera.com/exams/jee-main): Joint Entrance Examination eligibility, exam patterns, NIT/IIIT cutoffs, and prep guidance.
+
+## Student Resources
+
+- [College Directory](https://collegesera.com/college-directory): Complete A-Z index of verified higher education institutions across India.
+- [Scholarship Portal](https://collegesera.com/scholarship): Guidelines for securing government welfare scholarships, minority concessions, and institutional fee waivers.
+- [Education Articles & News](https://collegesera.com/articles): In-depth guides on admission cutoffs, college comparisons, career guidance, and campus news.
+- [Contact & Admission Counseling](https://collegesera.com/contact-us): Connect with educational counselors for personalized guidance and direct admission assistance.

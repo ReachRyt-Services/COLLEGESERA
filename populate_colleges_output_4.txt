@@ -1,0 +1,21 @@
+Starting college population...
+Error inserting Indian Institute of Technology Madras (IITM):  {
+  code: '23503',
+  details: 'Key is still referenced from table "admission_process".',
+  hint: null,
+  message: 'update or delete on table "colleges" violates foreign key constraint "admission_process_college_id_fkey" on table "admission_process"'
+}
+Successfully inserted / updated: Anna University (CEG)
+Successfully inserted / updated: National Institute of Technology, Tiruchirappalli (NITT)
+Error inserting Vellore Institute of Technology (VIT):  {
+  code: '23503',
+  details: 'Key is still referenced from table "admission_process".',
+  hint: null,
+  message: 'update or delete on table "colleges" violates foreign key constraint "admission_process_college_id_fkey" on table "admission_process"'
+}
+Successfully inserted / updated: Loyola College
+Successfully inserted / updated: PSG College of Technology
+Successfully inserted / updated: Madras Medical College (MMC)
+Successfully inserted / updated: SRM Institute of Science and Technology
+Successfully inserted / updated: Christian Medical College (CMC)
+Done!

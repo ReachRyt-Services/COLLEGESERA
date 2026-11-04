@@ -1,0 +1,56 @@
+Starting college population...
+Error inserting Indian Institute of Technology Madras (IITM):  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting Anna University (CEG):  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting National Institute of Technology, Tiruchirappalli (NITT):  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting Vellore Institute of Technology (VIT):  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting Loyola College:  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting PSG College of Technology:  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting Madras Medical College (MMC):  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting SRM Institute of Science and Technology:  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Error inserting Christian Medical College (CMC):  {
+  code: '42501',
+  details: null,
+  hint: null,
+  message: 'new row violates row-level security policy for table "colleges"'
+}
+Done!

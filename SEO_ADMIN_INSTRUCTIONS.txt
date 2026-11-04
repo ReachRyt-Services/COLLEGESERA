@@ -1,0 +1,30 @@
+=========================================
+COLLEGESERA SEO ADMIN GUIDE
+=========================================
+
+1. LOGIN CREDENTIALS
+-----------------------------------------
+URL:      http://localhost:5173/seo-admin  (or your production URL /seo-admin)
+Username: seo
+Password: CollegeSera@SEO
+
+
+2. STEPS AFTER SAVING A CUSTOM TAG
+-----------------------------------------
+Once you click "Save" on a custom SEO tag (Title, Description, or OG Image) for a specific college in the Admin Panel:
+
+STEP 1: Live Update (Instant)
+- The changes are instantly saved to the Supabase database.
+- If you visit the specific college page in your browser (e.g. /college/sri-ramakrishna-college-of-arts-and-science), the new SEO title and description are immediately active and visible in the page source (`<head>`).
+
+STEP 2: Update the Sitemap (For Google)
+- To ensure Google's crawler gets the absolute latest `sitemap.xml` structure with the new priorities, you need to regenerate the sitemap file.
+- Open your terminal in the project folder and run:
+  
+  npm run sitemap
+
+- This script will fetch the latest SEO data and regenerate `public/sitemap.xml`.
+
+STEP 3: Verify (Optional)
+- Open your browser and go to `http://localhost:5173/sitemap.xml` to verify the sitemap has been successfully built.
+- Right-click on the specific college page, click "View Page Source", and ensure the `<title>` matches what you entered in the admin panel!

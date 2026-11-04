@@ -1,0 +1,6 @@
+Verifying College Update...
+Testing update on: PSG Institute of Management 
+Original status: true
+Update successful. New status: false
+VERIFICATION PASSED: Status changed from true to false
+Reverted status back to true

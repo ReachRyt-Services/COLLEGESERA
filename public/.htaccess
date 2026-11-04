@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. Direct hit to index.html
+  RewriteRule ^index\.html$ - [L]
+
+  # 2. Serve real static files and existing directories directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. If an asset (css/js/image/font) is not found, return 404 instead of index.html
+  # This prevents stylesheet MIME-type mismatch errors in Chrome
+  RewriteCond %{REQUEST_URI} \.(css|js|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot|xml|txt|json|webp|avif)$ [NC]
+  RewriteRule ^ - [R=404,L]
+
+  # 4. Route all clean URLs and subpaths to root index.html for React Router SPA
+  RewriteRule ^ /index.html [L]
+</IfModule>

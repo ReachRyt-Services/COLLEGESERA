@@ -1,0 +1,135 @@
+# Collegesera — Full Knowledge Base for Large Language Models
+
+Collegesera (https://collegesera.com) is India's premier educational portal designed to help students, parents, and education consultants discover, evaluate, and apply to colleges and universities.
+
+## About Collegesera
+
+- **Official Website**: https://collegesera.com
+- **Headquarters**: Coimbatore, Tamil Nadu, India
+- **Coverage**: Higher education institutions across Tamil Nadu (Coimbatore, Chennai, Salem, Madurai, Trichy, Erode, Tirunelveli, Vellore), Karnataka (Bangalore, Mysore), Kerala, and national premier institutes across India.
+- **Core Offerings**:
+  1. Detailed college profiles with verified accreditation (NAAC, NBA, NIRF, AICTE, UGC, Anna University affiliation).
+  2. Authentic course-by-course fee structures and seat intakes.
+  3. Annual placement statistics including highest packages, average packages, and top recruiting companies.
+  4. Entrance exam cutoffs and dates (TNEA, TANCET, NEET, JEE, CAT, MAT).
+  5. Direct student application assistance, brochure downloads, and scholarship advisory.
+
+---
+
+## The 8 Priority Landing Pages
+
+### 1. Top MBA Colleges in Coimbatore
+- **URL**: https://collegesera.com/top-mba-colleges-in-coimbatore
+- **Focus**: Business schools, MBA colleges, and PGDM institutions in Coimbatore.
+- **Key Institutions**: PSG Institute of Management (PSG IM), Coimbatore Institute of Technology (CIT MBA), GRG School of Management Studies (GRGSMS), Amrita School of Business, Karunya School of Management, Kumaraguru Institute of Agriculture / Business, Sri Krishna College of Engineering & Technology (MBA).
+- **Eligibility**: Any recognized bachelor's degree with a minimum 50% aggregate (45% for reserved categories). Valid scores in TANCET, MAT, CAT, CMAT, or ATMA.
+- **Average Fees**: INR 1.5 Lakhs to 6.5 Lakhs across 2 years.
+
+### 2. Top Engineering Colleges in Coimbatore
+- **URL**: https://collegesera.com/top-engineering-colleges-in-coimbatore
+- **Focus**: Leading engineering institutions in Coimbatore, known as the "Manchester of South India" and a hub for technical education.
+- **Key Institutions**: PSG College of Technology (PSG Tech), Government College of Technology (GCT Coimbatore), Coimbatore Institute of Technology (CIT), Sri Krishna College of Engineering and Technology (SKCET), Kumaraguru College of Technology (KCT), Sri Ramakrishna Engineering College (SREC).
+- **Admission Process**: Tamil Nadu Engineering Admissions (TNEA) single-window counseling conducted by Anna University based on Class 12 PCM cutoffs (out of 200), plus Management Quota via Consortium of Self-Financing Colleges.
+
+### 3. Autonomous Engineering Colleges in Coimbatore
+- **URL**: https://collegesera.com/autonomous-engineering-colleges-in-coimbatore
+- **Focus**: Engineering colleges granted academic autonomous status by the University Grants Commission (UGC) and Anna University.
+- **Advantages**: Industry-aligned curriculum, internal semester examinations, specialized elective courses in AI/ML, Data Science, Cyber Security, Robotics, and higher on-campus placement rates.
+
+### 4. Top Engineering Colleges in Salem
+- **URL**: https://collegesera.com/top-engineering-colleges-in-salem
+- **Focus**: Engineering institutions located in Salem and surrounding regions in Western Tamil Nadu.
+- **Key Institutions**: Government College of Engineering Salem (GCE Salem), Sona College of Technology, Knowledge Institute of Technology (KIOT), AVS Engineering College.
+- **Specializations**: Mechanical, Metallurgy, Civil, Electrical & Electronics, CSE, and Information Technology.
+
+### 5. NIRF Ranked Engineering Colleges in Coimbatore
+- **URL**: https://collegesera.com/nirf-ranked-engineering-colleges-in-coimbatore
+- **Focus**: Institutions that have achieved national rankings under the Ministry of Education's National Institutional Ranking Framework (NIRF).
+- **Evaluation Criteria**: Teaching, Learning & Resources (TLR), Research and Professional Practice (RPC), Graduation Outcomes (GO), Outreach and Inclusivity (OI), and Peer Perception.
+
+### 6. Top Paramedical Colleges in Coimbatore
+- **URL**: https://collegesera.com/top-paramedical-colleges-in-coimbatore
+- **Focus**: Allied health science and paramedical educational institutions affiliated with The Tamil Nadu Dr. M.G.R. Medical University.
+- **Popular Programs**: B.Sc Nursing, Bachelor of Physiotherapy (BPT), Bachelor of Pharmacy (B.Pharm), B.Sc Medical Laboratory Technology (B.Sc MLT), B.Sc Radiography and Imaging Technology, B.Sc Cardiac Technology.
+
+### 7. Top Occupational Therapy Colleges in Coimbatore
+- **URL**: https://collegesera.com/top-occupational-therapy-colleges-in-coimbatore
+- **Focus**: Colleges offering Bachelor of Occupational Therapy (BOT) degrees.
+- **Course Duration**: 4 years of academic study plus 6 months of mandatory rotating clinical internship.
+- **Career Scope**: Neuro-rehabilitation, pediatric developmental therapy, orthopedic rehabilitation, mental health clinics, and ergonomic consultation.
+
+### 8. Scholarship for MBA in Coimbatore
+- **URL**: https://collegesera.com/scholarship-for-mba-in-coimbatore
+- **Focus**: Financial assistance, institutional merit scholarships, and fee waivers for MBA candidates in Coimbatore.
+- **Types of Scholarships**: Merit scholarships for high scorers in TANCET/MAT (above 85 percentile), sports scholarships, government post-matric scholarships for SC/ST/OBC students, and special women empowerment waivers.
+
+### Bonus / Related: Top 10 MBA Colleges in Coimbatore
+- **URL**: https://collegesera.com/top-10-mba-colleges-in-coimbatore
+- **Focus**: Editorial ranking of the top ten business schools in Coimbatore with comparative fee vs. placement analysis.
+
+---
+
+## Major Streams & Course Offerings
+
+1. **Engineering (B.E. / B.Tech / M.E. / M.Tech)**
+   - Computer Science & Engineering (CSE)
+   - Artificial Intelligence & Machine Learning (AI & ML)
+   - Information Technology (IT)
+   - Electronics & Communication Engineering (ECE)
+   - Mechanical Engineering
+   - Electrical & Electronics Engineering (EEE)
+   - Civil Engineering
+   - Biotechnology & Biomedical Engineering
+
+2. **Management & Business (MBA / PGDM / BBA / B.Com)**
+   - Finance & Banking
+   - Marketing Management
+   - Human Resource Management (HR)
+   - Business Analytics & Big Data
+   - Logistics & Supply Chain Management
+
+3. **Medical & Healthcare (MBBS / BDS / B.Pharm / B.Sc Nursing / BPT / BOT)**
+   - Medicine & Surgery
+   - Dental Sciences
+   - Pharmacy (B.Pharm, Pharm.D)
+   - Nursing & Midwifery
+   - Physical & Occupational Therapy
+   - Allied Health Sciences
+
+4. **Arts, Sciences & Humanities**
+   - Computer Applications (BCA, MCA)
+   - Data Science & Artificial Intelligence
+   - Physics, Chemistry, Mathematics
+   - Commerce (B.Com Professional Accounting, Corporate Secretaryship)
+   - English Literature, Visual Communication, Psychology
+
+---
+
+## Important Admissions Entrance Exams
+
+- **TNEA (Tamil Nadu Engineering Admissions)**: Single-window counselling for engineering admission in Tamil Nadu. Conducted based on 12th standard physics, chemistry, and mathematics marks.
+- **TANCET (Tamil Nadu Common Entrance Test)**: Administered by Anna University on behalf of the Tamil Nadu Government for admissions to MBA and MCA courses.
+- **CEETA-PG (Common Engineering Entrance Test and Admission - PG)**: For M.E., M.Tech, M.Arch, and M.Plan programs in Tamil Nadu.
+- **NEET UG**: Single national entrance exam for MBBS, BDS, AYUSH, and veterinary admissions across India.
+- **JEE Main & Advanced**: National entrance for NITs, IIITs, CFTIs, and IITs.
+- **CAT / MAT / CMAT / XAT**: National standardized examinations accepted by business schools.
+
+---
+
+## Frequently Asked Questions
+
+**Q: How can students apply through Collegesera?**
+A: Students can search for any college, view verified fees and placement metrics, and click "Apply Now" or "Brochure" to register their profile. Expert admission counselors guide students through document verification, counseling application, and scholarship eligibility free of charge.
+
+**Q: Where can I find the official XML sitemap?**
+A: The official sitemap is maintained dynamically at:
+https://collegesera.com/sitemap.xml
+
+**Q: What is the admin URL for managing SEO and landing page metadata?**
+A: Authorized SEO administrators can update titles, meta descriptions, and keywords at:
+https://collegesera.com/seo-admin
+(Also accessible through the secure management portal at https://collegesera.com/secure-portal/seo)
+
+**Q: Contact Information**
+- Website: https://collegesera.com
+- Contact Page: https://collegesera.com/contact-us
