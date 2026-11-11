@@ -13,13 +13,33 @@ export default function CollegeOverview() {
   const { college } = useOutletContext<{ college: any }>();
   const [isUserFormOpen, setIsUserFormOpen] = useState(false);
 
+  // Normalize description: unescape literal \n, fix accidental leading characters, split into paragraphs
+  const cleanDescription = (college?.description || '')
+    .replace(/\\n/g, '\n')
+    .replace(/^a(?=PSG\b)/, '')
+    .trim();
+
+  const paragraphs = cleanDescription
+    ? cleanDescription.split(/\n\s*\n/).filter((p: string) => p.trim().length > 0)
+    : [];
+
   return (
     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
       <div className="space-y-6 mb-10">
         <Card>
           <CardContent className="p-6 md:p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">About {college.name}</h2>
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">{college.description}</p>
+            {paragraphs.length > 0 ? (
+              <div className="text-gray-700 leading-relaxed space-y-4">
+                {paragraphs.map((paragraph: string, idx: number) => (
+                  <p key={idx} className="whitespace-pre-line leading-relaxed">
+                    {paragraph.trim()}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500 italic">No description available for this institution.</p>
+            )}
           </CardContent>
         </Card>
         {college.highlights && college.highlights.length > 0 && (
