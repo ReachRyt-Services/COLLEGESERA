@@ -1,51 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ChevronDown, Search } from "lucide-react";
-import { toast } from "@/hooks/use-toast";
-
-const RELEVANT_KEYWORDS = [
-  "college", "colleges", "university", "universities", "institute", "institutes",
-  "school", "academy", "engineering", "btech", "mtech", "be", "me", "diploma",
-  "polytechnic", "mba", "pgdm", "bba", "mca", "bca", "management", "business",
-  "arts", "science", "commerce", "bsc", "msc", "bcom", "mcom", "ba", "ma",
-  "paramedical", "medical", "mbbs", "bds", "nursing", "pharmacy", "bpharm",
-  "bot", "bpt", "physiotherapy", "occupational", "therapy", "allied", "health",
-  "law", "llb", "architecture", "barch", "agriculture", "design", "hotel",
-  "aviation", "coimbatore", "salem", "chennai", "erode", "madurai", "trichy",
-  "tirunelveli", "vellore", "namakkal", "bangalore", "bengaluru", "kochi",
-  "hyderabad", "tamil nadu", "tamilnadu", "kerala", "karnataka", "india",
-  "tnea", "tancet", "neet", "jee", "cat", "mat", "cmat", "xat", "gate",
-  "autonomous", "nirf", "ranking", "rankings", "fees", "placement", "placements",
-  "admission", "scholarship", "courses", "top", "best", "govt", "private",
-  "psg", "cit", "ciet", "gct", "srec", "skcet", "kct", "hindusthan", "amrita",
-  "anna", "bharathiar", "loyola", "vit", "srm", "sastra", "tce"
-];
-
-function isRelevantSearch(query: string): boolean {
-  const clean = query.trim().toLowerCase();
-  if (clean.length < 2) return false;
-
-  // Check for repeated characters (e.g. "aaaaa")
-  if (/^(.)\1+$/.test(clean)) return false;
-
-  const dummyKeywords = ["asdf", "qwer", "zxcv", "hjkl", "dummy", "test", "testing", "1234", "abcd", "xyz"];
-  if (dummyKeywords.some(d => clean.includes(d)) && clean.length <= 8) return false;
-
-  // Check if query matches known keywords or known college acronyms/names
-  const tokens = clean.split(/[\s,+-]+/);
-  const matchesKeyword = tokens.some(t =>
-    RELEVANT_KEYWORDS.some(k => t === k || (t.length >= 3 && k.includes(t)) || (k.length >= 4 && t.includes(k)))
-  );
-
-  if (matchesKeyword) return true;
-
-  // If query consists of multi-word legitimate inquiry with vowels
-  if (tokens.length >= 2 && tokens.every(t => t.length >= 2 && /[aeiou]/i.test(t))) {
-    return true;
-  }
-
-  return false;
-}
+import { useQuery } from "@tanstack/react-query";
+import { getColleges } from "@/services/collegeService";
+import { useSuggestionGenerator } from "./search/useSuggestionGenerator";
+import { useSearchLogic } from "./search/useSearchLogic";
+import SearchDropdown from "./search/SearchDropdown";
 
 /* ---------- ANIMATED DROPDOWN WRAPPER ---------- */
 const MegaWrapper: React.FC<{
@@ -337,13 +297,21 @@ type MenuKey = "universities" | "engineering" | "arts" | "paramedical" | "mba" |
 const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) => {
   const [openMenu, setOpenMenu] = useState<MenuKey>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
 
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const headerRef = useRef<HTMLElement>(null);
+  const desktopDropdownRef = useRef<HTMLDivElement>(null);
+  const mobileDropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
+
+  const { data: colleges = [] } = useQuery({
+    queryKey: ["colleges"],
+    queryFn: () => getColleges(),
+  });
+
+  const generateSuggestions = useSuggestionGenerator(colleges);
 
   const handleMouseEnter = (key: MenuKey) => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -359,15 +327,46 @@ const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) =
     setOpenMenu(null);
   };
 
+  const {
+    query: searchQuery,
+    setQuery: setSearchQuery,
+    isOpen: isSearchDropdownOpen,
+    selectedIndex,
+    suggestions,
+    isLoading: isSearchLoading,
+    handleInputChange,
+    handleKeyDown,
+    handleSuggestionClick,
+    handleSubmit: handleSearchSubmit,
+    handleFocus: handleSearchFocus,
+    handleBlur: handleSearchBlur,
+  } = useSearchLogic(generateSuggestions, () => {
+    closeImmediate();
+    setMobileOpen(false);
+  });
+
+  const handleBlurWithDropdown = (e: React.FocusEvent) => {
+    setTimeout(() => {
+      const related = e.relatedTarget as Node | null;
+      if (
+        !desktopDropdownRef.current?.contains(related) &&
+        !mobileDropdownRef.current?.contains(related)
+      ) {
+        handleSearchBlur();
+      }
+    }, 150);
+  };
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
         setOpenMenu(null);
+        handleSearchBlur();
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [handleSearchBlur]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -390,28 +389,6 @@ const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) =
 
   const go = (path: string) => {
     navigate(path);
-    closeImmediate();
-    setMobileOpen(false);
-  };
-
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const query = searchQuery.trim();
-    if (!query) return;
-
-    if (!isRelevantSearch(query)) {
-      alert("Please enter a valid search keyword (e.g., college name, course like MBA or Engineering, or city like Coimbatore).");
-      toast({
-        title: "Search Query Alert",
-        description: "Please enter a valid search keyword (e.g. college name, course like MBA, or city like Coimbatore).",
-        variant: "destructive"
-      });
-      return;
-    }
-
-    const slug = query.toLowerCase().replace(/\s+/g, '-');
-    navigate(`/${slug}`);
-    setSearchQuery("");
     closeImmediate();
     setMobileOpen(false);
   };
@@ -496,7 +473,10 @@ const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) =
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={handleInputChange}
+                onKeyDown={handleKeyDown}
+                onFocus={handleSearchFocus}
+                onBlur={handleBlurWithDropdown}
                 placeholder={isPastHero ? "Search colleges, courses, cities, exams..." : "Search colleges..."}
                 className="w-full bg-transparent text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none"
               />
@@ -520,6 +500,17 @@ const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) =
                 {isPastHero ? "Search" : <Search size={13} />}
               </button>
             </div>
+
+            <SearchDropdown
+              ref={desktopDropdownRef}
+              isOpen={isSearchDropdownOpen && (searchQuery.trim().length >= 1 || suggestions.length > 0)}
+              query={searchQuery}
+              suggestions={suggestions}
+              isLoading={isSearchLoading}
+              selectedIndex={selectedIndex}
+              onSuggestionClick={handleSuggestionClick}
+              className="min-w-[320px] sm:min-w-[380px] right-0 left-auto lg:left-0"
+            />
           </form>
         </div>
 
@@ -577,16 +568,28 @@ const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) =
         <div className="lg:hidden absolute top-full left-0 w-full bg-white h-[calc(100vh-60px)] overflow-y-auto border-t border-slate-100 shadow-xl z-50">
           <div className="p-4 space-y-2">
             {/* Search Bar Mobile (replacing toll-free) */}
-            <form onSubmit={handleSearchSubmit} className="mb-4">
+            <form onSubmit={handleSearchSubmit} className="mb-4 relative">
               <div className="flex items-center bg-slate-100 border border-slate-200 rounded-xl px-3 py-2.5">
                 <Search size={18} className="text-slate-400 mr-2 shrink-0" />
                 <input
                   type="text"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={handleInputChange}
+                  onKeyDown={handleKeyDown}
+                  onFocus={handleSearchFocus}
+                  onBlur={handleBlurWithDropdown}
                   placeholder="Search colleges, courses, cities..."
                   className="w-full bg-transparent text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none"
                 />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => setSearchQuery("")}
+                    className="text-xs text-slate-400 hover:text-slate-600 px-1 shrink-0"
+                  >
+                    ✕
+                  </button>
+                )}
                 <button
                   type="submit"
                   className="px-3 py-1 bg-orange-600 text-white rounded-lg text-xs font-semibold hover:bg-orange-700 transition-colors shrink-0 ml-2"
@@ -594,6 +597,16 @@ const Header: React.FC<{ onBookingClick?: () => void }> = ({ onBookingClick }) =
                   Search
                 </button>
               </div>
+
+              <SearchDropdown
+                ref={mobileDropdownRef}
+                isOpen={isSearchDropdownOpen && (searchQuery.trim().length >= 1 || suggestions.length > 0)}
+                query={searchQuery}
+                suggestions={suggestions}
+                isLoading={isSearchLoading}
+                selectedIndex={selectedIndex}
+                onSuggestionClick={handleSuggestionClick}
+              />
             </form>
 
             {navItems.map(item => (

@@ -8,11 +8,13 @@ import {
   Instagram,
   Linkedin,
   MapPin,
+  Phone,
   Mail,
   ArrowRight
 } from "lucide-react";
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
   const { data: exams = [] } = useQuery({
     queryKey: ['footer-exams'],
@@ -171,19 +173,24 @@ const Footer = () => {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="text-orange-500 shrink-0 mt-1" size={18} />
-                <span className="text-slate-400">Coimbatore</span>
+                <span className="text-slate-400">Coimbatore, Tamilnadu</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="text-orange-500 shrink-0 mt-1" size={18} />
-                <span className="text-slate-400">Chennai</span>
+                <span className="text-slate-400">Ascendas IT Park, Chennai</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="text-orange-500 shrink-0 mt-1" size={18} />
-                <span className="text-slate-400">Bangalore</span>
+                <span className="text-slate-400">Bagmane Tech Park, Bangalore</span>
               </li>
-              <li className="flex items-start gap-3">
-                <MapPin className="text-orange-500 shrink-0 mt-1" size={18} />
-                <span className="text-slate-400">Kochi</span>
+              <li>
+                <a
+                  href="tel:+916374715327"
+                  className="flex items-center gap-3 text-slate-400 hover:text-orange-500 transition-colors duration-200 group"
+                >
+                  <Phone className="text-orange-500 shrink-0 group-hover:text-orange-400 transition-colors" size={18} />
+                  <span>+91 63747 15327</span>
+                </a>
               </li>
               <li>
                 <a
@@ -202,7 +209,16 @@ const Footer = () => {
       {/* Bottom Bar */}
       <div className="border-t border-slate-900 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-xs text-slate-500">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+
+            <div className="flex items-center gap-2">
+              <span>&copy; {currentYear} Saventevo Solutions.</span>
+              <span className="hidden sm:inline">|</span>
+              <span className="flex items-center gap-1">
+                Made with <span className="text-red-500 animate-pulse">❤</span> in India 🇮🇳
+              </span>
+            </div>
+
             <div className="flex flex-wrap justify-center gap-6">
               <Link to="/articles" className="hover:text-white transition-colors font-medium text-orange-400 hover:text-orange-300">Articles</Link>
               <Link to="/about-us" className="hover:text-white transition-colors">About Us</Link>

@@ -24,6 +24,7 @@ import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { getColleges, getBranches, getCollegeTypes, getCollegeLocations, getCollegeStates, getAds } from "@/services/collegeService";
 import { DatabaseCollege, DatabaseAdvertisement } from "@/types/database";
+import { findMatchingColleges } from "@/utils/collegeSearch";
 
 import { INDIAN_STATES } from "@/data/constants";
 
@@ -41,6 +42,17 @@ const KNOWN_CITIES = [
   "tiruppur", "namakkal", "bangalore", "bengaluru", "kochi", "hyderabad", 
   "mumbai", "delhi", "pune"
 ];
+
+const GENERIC_SEO_TOKENS = new Set([
+  "top", "best", "10", "20", "5", "top10", "colleges", "college",
+  "universities", "university", "institutes", "institutions", "in", "at",
+  "of", "for", "and", "the", "list", "autonomous", "nirf", "ranked",
+  "featured", "scholarship", "occupational", "therapy", "tamil", "nadu",
+  "tamilnadu", "kerala", "karnataka", "india", "hotel",
+  ...KNOWN_CATEGORIES,
+  ...KNOWN_CITIES,
+  ...INDIAN_STATES.flatMap(s => s.toLowerCase().split(/[\s-]+/)),
+]);
 
 interface RouteFilterInput {
   type?: string;
@@ -108,8 +120,7 @@ function parseCollegeUrlFilters(params: RouteFilterInput): ParsedCollegeFilters 
     t === 'arts-and-science-colleges-india' ||
     t === 'paramedical-india' ||
     t === 'paramedical-colleges-india' ||
-    t.endsWith('-india') ||
-    t === 'india'
+    ((!seoSlug || t.split('-').every(tok => GENERIC_SEO_TOKENS.has(tok))) && (t.endsWith('-india') || t === 'india'))
   );
 
   if (isIndiaTarget) {
@@ -461,6 +472,12 @@ function parseCollegeUrlFilters(params: RouteFilterInput): ParsedCollegeFilters 
       },
     };
 
+    const seoTokens = seoLower.split('-').filter(Boolean);
+    const isPureSeoSlug =
+      Boolean(trendingTitleMap[seoLower]) ||
+      (seoTokens.some(t => ['colleges', 'universities', 'institutes', 'institutions', 'scholarship'].includes(t)) &&
+        seoTokens.every(t => GENERIC_SEO_TOKENS.has(t)));
+
     if (trendingTitleMap[seoLower]) {
       const item = trendingTitleMap[seoLower];
       h1Title = item.title;
@@ -474,8 +491,8 @@ function parseCollegeUrlFilters(params: RouteFilterInput): ParsedCollegeFilters 
       if (item.limit) resolvedLimit = item.limit;
       if (item.desc) seoDesc = item.desc;
       if (item.institutionType) resolvedInstitutionType = item.institutionType;
-    } else {
-      // Dynamic parsing of SEO slug (e.g. mba-colleges-in-salem)
+    } else if (isPureSeoSlug) {
+      // Dynamic parsing of pure SEO slug (e.g. mba-colleges-in-salem)
       const safeSeo = seoLower.replace(/coimbatore/gi, ' ');
       if (safeSeo.includes('tamil-nadu') || safeSeo.includes('tamilnadu')) resolvedState = 'Tamil Nadu';
       if (safeSeo.includes('engineering')) resolvedCategory = 'engineering';
@@ -524,6 +541,10 @@ function parseCollegeUrlFilters(params: RouteFilterInput): ParsedCollegeFilters 
         h1Title = seoSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
         h2Title = `Top ${h1Title} - Rankings, Fees & Placements`;
       }
+    } else {
+      // User search query slug (e.g. /sri-krishna-college-of-engineering-and-technology, /amrita-university)
+      h1Title = seoSlug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      h2Title = `Top ${h1Title} - Rankings, Fees & Placements`;
     }
 
     if (!resolvedInstitutionType) {
@@ -796,6 +817,7 @@ const Colleges = () => {
     setHeroTitle(urlFilters.h1Title);
     setHeroSubtitle(urlFilters.h2Title);
     setSeoCustomDesc(urlFilters.seoDesc);
+    setInPageSearch("");
   }, [urlFilters]);
 
   // Auto-collapse filter on scroll down past header/hero
@@ -950,7 +972,7 @@ const Colleges = () => {
 
   // --- FILTER LOGIC ---
   const filteredColleges = useMemo(() => {
-    return colleges.filter(college => {
+    const baseFiltered = colleges.filter(college => {
       // Category — matches type_collwge or type field (case-insensitive contains)
       if (selectedCategory !== "all") {
         const typeLower = (college.type_collwge || college.type || '').toLowerCase().trim();
@@ -1071,64 +1093,6 @@ const Colleges = () => {
         if (!hasNirf) return false;
       }
 
-      // Search
-      if (searchQuery) {
-        const q = searchQuery.toLowerCase();
-        const stopWords = ["in", "at", "the", "of", "top", "best", "colleges", "college", "list", "10", "5", "20"];
-        const words = q.split(/[\s-]+/).map(w => w.trim().toLowerCase()).filter(w => w.length > 1 && !stopWords.includes(w));
-
-        if (words.length > 0) {
-          const collegeLoc = (college.location || '').toLowerCase();
-          const collegeDist = (college.district || '').toLowerCase();
-          const collegeName = (college.name || '').toLowerCase();
-          const collegeType = (college.type || '').toLowerCase();
-          const collegeTypeColl = (college.type_collwge || '').toLowerCase();
-
-          const knownCities = [
-            'salem', 'coimbatore', 'chennai', 'madurai', 'trichy', 'tiruchirappalli',
-            'erode', 'vellore', 'tirunelveli', 'namakkal', 'thanjavur', 'dindigul',
-            'kanchipuram', 'tiruppur', 'karur', 'ooty', 'nilgiris', 'cuddalore',
-            'bangalore', 'bengaluru', 'mumbai', 'delhi', 'hyderabad', 'pune', 'kolkata'
-          ];
-
-          const locationTerms: string[] = [];
-          const nonLocationTerms: string[] = [];
-
-          words.forEach(w => {
-            const isKnownLoc = knownCities.includes(w) ||
-              (locations && locations.some(loc => loc.toLowerCase() === w)) ||
-              (states && states.some(st => st.toLowerCase().replace(/[^a-z0-9]/g, '') === w));
-            if (isKnownLoc) {
-              locationTerms.push(w);
-            } else {
-              nonLocationTerms.push(w);
-            }
-          });
-
-          // Strict location requirement: If city/location terms are in query, college MUST match ALL of them
-          if (locationTerms.length > 0) {
-            const matchesLocation = locationTerms.every(loc =>
-              collegeDist.includes(loc) || collegeLoc.includes(loc)
-            );
-            if (!matchesLocation) return false;
-          }
-
-          // If non-location terms exist, college must match them
-          if (nonLocationTerms.length > 0) {
-            const matchesNonLoc = nonLocationTerms.some(term => {
-              if (collegeName.includes(term)) return true;
-              if (collegeType.includes(term) || collegeTypeColl.includes(term)) return true;
-              if (college.courses && college.courses.some(c =>
-                (c.name && c.name.toLowerCase().includes(term)) ||
-                (c.specialization && c.specialization.toLowerCase().includes(term))
-              )) return true;
-              return false;
-            });
-            if (!matchesNonLoc) return false;
-          }
-        }
-      }
-
       // Top Cities filter
       if (isTopCities) {
         const topCities = ['chennai', 'coimbatore', 'bangalore', 'kochi', 'salem', 'erode', 'madurai', 'trichy', 'bengaluru', 'hyderabad'];
@@ -1162,6 +1126,13 @@ const Colleges = () => {
 
       return true;
     });
+
+    // Progressive keyword search matching up to the last matching keyword
+    if (searchQuery && searchQuery.trim()) {
+      return findMatchingColleges(baseFiltered, searchQuery).matchedColleges;
+    }
+
+    return baseFiltered;
   }, [colleges, selectedCategory, selectedDistrict, selectedState, selectedDegree, selectedOwnership, searchQuery, fieldParam, programParam, isTopCities, courseSlugFilter, isFeaturedOnly, isAutonomousOnly, isNirfOnly]);
 
   // Derive location for SEO content

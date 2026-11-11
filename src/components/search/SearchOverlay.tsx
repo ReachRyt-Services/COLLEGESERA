@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { useQuery } from "@tanstack/react-query";
 import { getColleges } from "@/services/collegeService";
-import { useNavigate, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { cn } from "@/lib/utils";
 import { useSuggestionGenerator } from "./useSuggestionGenerator";
 import { useSearchLogic } from "./useSearchLogic";
 
@@ -25,7 +26,6 @@ const popularSearches = [
 ];
 
 const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
-    const navigate = useNavigate();
     const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -46,33 +46,18 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
     const generateSuggestions = useSuggestionGenerator(colleges);
     const {
         query,
+        setQuery,
+        selectedIndex,
         suggestions,
         handleInputChange,
         handleKeyDown,
-        handleSuggestionClick: originalHandleSuggestionClick,
+        handleSuggestionClick,
         handleSubmit,
-    } = useSearchLogic(generateSuggestions, (q) => {
-        const slug = q.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-        navigate(`/${slug}`);
+    } = useSearchLogic(generateSuggestions, () => {
         onClose();
     });
 
-    const handleSuggestionClick = (suggestion: any) => {
-        originalHandleSuggestionClick(suggestion);
-        onClose();
-    };
-
-    const handleTrendingClick = (item: { label: string; slug?: string }) => {
-        const slug = item.slug || item.label
-            .trim()
-            .toLowerCase()
-            .replace(/&/g, 'and')
-            .replace(/\./g, '')
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/^-+|-+$/g, '');
-        navigate(`/${slug}`);
-        onClose();
-    };
+    const trimmedQuery = query.trim();
 
     return (
         <AnimatePresence>
@@ -108,41 +93,67 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                                     onChange={handleInputChange}
                                     onKeyDown={handleKeyDown}
                                     placeholder="Search colleges, courses, cities, exams…"
-                                    className="w-full pl-12 pr-4 py-6 text-lg rounded-xl border-2 border-blue-500 focus-visible:ring-0 focus-visible:border-blue-600 shadow-sm"
+                                    className="w-full pl-12 pr-28 py-6 text-lg rounded-xl border-2 border-blue-500 focus-visible:ring-0 focus-visible:border-blue-600 shadow-sm"
                                 />
+                                {query && (
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            setQuery("");
+                                            inputRef.current?.focus();
+                                        }}
+                                        className="absolute right-24 top-1/2 -translate-y-1/2 text-sm text-gray-400 hover:text-gray-600 px-2 py-1"
+                                    >
+                                        ✕
+                                    </button>
+                                )}
+                                <button
+                                    type="submit"
+                                    className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-sm px-4 py-2 rounded-lg transition-colors"
+                                >
+                                    Search
+                                </button>
                             </form>
 
                             {/* Live Suggestions Dropdown */}
-                            {query.length >= 2 && suggestions.length > 0 && (
-                                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-[300px] overflow-y-auto z-10">
-                                    {suggestions.map((suggestion) => (
-                                        <div
-                                            key={suggestion.id}
+                            {trimmedQuery.length >= 1 && suggestions.length > 0 && (
+                                <div
+                                    onMouseDown={(e) => e.preventDefault()}
+                                    className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 max-h-[320px] overflow-y-auto z-10"
+                                >
+                                    {suggestions.map((suggestion, index) => (
+                                        <button
+                                            key={`${suggestion.type}-${suggestion.id}-${index}`}
+                                            type="button"
+                                            onMouseDown={(e) => e.preventDefault()}
                                             onClick={() => handleSuggestionClick(suggestion)}
-                                            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 cursor-pointer border-b border-gray-50 last:border-0"
+                                            className={cn(
+                                                "w-full text-left flex items-center gap-3 px-4 py-3 hover:bg-orange-50/70 cursor-pointer border-b border-gray-50 last:border-0 transition-colors",
+                                                selectedIndex === index && "bg-orange-50 border-l-4 border-l-orange-500"
+                                            )}
                                         >
                                             {suggestion.icon}
-                                            <div className="flex flex-col">
-                                                <span className="text-gray-900 font-medium">{suggestion.text}</span>
+                                            <div className="flex flex-col min-w-0">
+                                                <span className="text-gray-900 font-medium truncate">{suggestion.text}</span>
                                                 <span className="text-xs text-gray-500 capitalize">{suggestion.type}</span>
                                             </div>
-                                        </div>
+                                        </button>
                                     ))}
                                 </div>
                             )}
 
                             {/* No results */}
-                            {query.length >= 2 && suggestions.length === 0 && (
+                            {trimmedQuery.length >= 2 && suggestions.length === 0 && (
                                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 p-6 text-center text-gray-500 z-10">
                                     <Search className="w-8 h-8 text-gray-300 mx-auto mb-2" />
-                                    <p>No results for "<span className="font-medium text-gray-700">{query}</span>"</p>
+                                    <p>No results for &ldquo;<span className="font-medium text-gray-700">{trimmedQuery}</span>&rdquo;</p>
                                     <p className="text-xs mt-1 text-gray-400">Press Enter to search anyway</p>
                                 </div>
                             )}
                         </div>
 
                         {/* Popular Searches */}
-                        {query.length < 2 && (
+                        {trimmedQuery.length < 1 && (
                             <div>
                                 <div className="flex items-center gap-2 mb-4">
                                     <TrendingUp className="w-4 h-4 text-orange-500" />

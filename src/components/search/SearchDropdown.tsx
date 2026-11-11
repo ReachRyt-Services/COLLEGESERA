@@ -1,4 +1,3 @@
-
 import { forwardRef } from "react";
 import { Search } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -11,18 +10,24 @@ interface SearchDropdownProps {
   isLoading: boolean;
   selectedIndex: number;
   onSuggestionClick: (suggestion: SearchSuggestion) => void;
+  className?: string;
 }
 
 const SearchDropdown = forwardRef<HTMLDivElement, SearchDropdownProps>(
-  ({ isOpen, query, suggestions, isLoading, selectedIndex, onSuggestionClick }, ref) => {
-    if (!isOpen || (query.length < 2 && suggestions.length === 0)) {
+  ({ isOpen, query, suggestions, isLoading, selectedIndex, onSuggestionClick, className }, ref) => {
+    const trimmed = query.trim();
+    if (!isOpen || (trimmed.length < 1 && suggestions.length === 0)) {
       return null;
     }
 
     return (
-      <div 
+      <div
         ref={ref}
-        className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-80 overflow-y-auto"
+        onMouseDown={(e) => e.preventDefault()}
+        className={cn(
+          "absolute top-full left-0 right-0 mt-1.5 bg-white border border-gray-200 rounded-xl shadow-xl z-50 max-h-80 overflow-y-auto",
+          className
+        )}
       >
         {isLoading ? (
           <div className="p-4 text-center text-gray-500">
@@ -32,32 +37,34 @@ const SearchDropdown = forwardRef<HTMLDivElement, SearchDropdownProps>(
             </div>
           </div>
         ) : suggestions.length > 0 ? (
-          <div className="py-2">
+          <div className="py-1.5">
             {suggestions.map((suggestion, index) => (
               <button
-                key={suggestion.id}
+                key={`${suggestion.type}-${suggestion.id}-${index}`}
+                type="button"
+                onMouseDown={(e) => e.preventDefault()}
                 onClick={() => onSuggestionClick(suggestion)}
                 className={cn(
-                  "w-full px-4 py-3 text-left hover:bg-gray-50 flex items-center space-x-3 transition-colors",
-                  selectedIndex === index && "bg-orange-50 border-l-4 border-orange-500"
+                  "w-full px-4 py-2.5 text-left hover:bg-orange-50/70 flex items-center space-x-3 transition-colors border-b border-gray-50 last:border-0",
+                  selectedIndex === index && "bg-orange-50 border-l-4 border-l-orange-500"
                 )}
               >
                 {suggestion.icon}
-                <div className="flex-1">
-                  <span className="text-gray-900">{suggestion.text}</span>
-                  <span className="text-xs text-gray-500 ml-2 capitalize">
+                <div className="flex-1 min-w-0">
+                  <div className="text-sm font-medium text-gray-900 truncate">{suggestion.text}</div>
+                  <div className="text-xs text-gray-500 capitalize">
                     {suggestion.type}
-                  </span>
+                  </div>
                 </div>
               </button>
             ))}
           </div>
-        ) : query.length >= 2 ? (
+        ) : trimmed.length >= 2 ? (
           <div className="p-4 text-center text-gray-500">
-            <div className="flex flex-col items-center space-y-2">
-              <Search className="w-8 h-8 text-gray-300" />
-              <span>No suggestions found for "{query}"</span>
-              <span className="text-xs">Press Enter to search anyway</span>
+            <div className="flex flex-col items-center space-y-1.5">
+              <Search className="w-7 h-7 text-gray-300" />
+              <span className="text-sm">No suggestions found for &ldquo;{trimmed}&rdquo;</span>
+              <span className="text-xs text-gray-400">Press Enter to search anyway</span>
             </div>
           </div>
         ) : null}

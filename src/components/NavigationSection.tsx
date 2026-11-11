@@ -18,7 +18,7 @@ const NavigationSection = () => {
     {
       name: "MBA",
       path: "/colleges/mba",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+      image: "/MBA logo.png",
       description: "Business Schools"
     },
     {

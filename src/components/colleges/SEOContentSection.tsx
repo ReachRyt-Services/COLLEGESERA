@@ -204,10 +204,10 @@ const SEOContentSection: React.FC<SEOContentSectionProps> = ({ location, categor
     const getRank = (college: DatabaseCollege) => {
         if (!college.rankings || college.rankings.length === 0) return 999;
         // Try to find NIRF rank first
-        const nirf = college.rankings.find(r => r.agency.toLowerCase().includes('nirf'));
-        if (nirf) return parseInt(nirf.rank) || 999;
+        const nirf = college.rankings.find(r => (r?.agency || '').toLowerCase().includes('nirf'));
+        if (nirf) return parseInt(nirf.rank || '') || 999;
         // Fallback to first available rank
-        return parseInt(college.rankings[0].rank) || 999;
+        return parseInt(college.rankings[0]?.rank || '') || 999;
     };
 
     const topRanked = [...colleges]

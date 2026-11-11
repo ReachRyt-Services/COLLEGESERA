@@ -82,33 +82,27 @@ BEGIN
         'On-campus hostel (Single, Double & Triple) with Wi-Fi, Gym, Sports & 24/7 Power/Water'
     ]);
 
-    v_description := 'PSG Institute of Management (PSGIM) is a well-established business school located in Peelamedu, Coimbatore. Its roots go back to 1965, when it began as the Department of Management Sciences under PSG College of Technology. It became an independent institute in 1994.
-
-The institute offers a two-year, full-time MBA focused on management fundamentals, practical learning and professional development. Teaching methods include case studies, internships, live consulting projects, summer projects and activity-based learning. The programme is affiliated with Anna University, approved by AICTE, and accredited by NBA and ACBSP.
-
-• Location: Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004.
-• Course duration: 2 years, full-time.
-• Eligibility: Bachelor''s degree with a minimum of 60% aggregate; final-year students may apply provisionally.
-• Official website: https://psgim.ac.in/
-
-2. MBA Course and Fees Structure
-Students study core management subjects in the first year and pursue specialisations and electives in the second year, culminating in a project-based dissertation.
-• Specialisations: Finance, Marketing, Human Resources, Decision Science & Analytics.
-• Fees: Current official 2026–27 intake fees are unverified in third-party sources. Check directly with official admissions.
-
-3. MBA Admission Process
-Admission considers academic performance, entrance-exam scores (CAT, MAT, ATMA, TANCET for 2026 cycle), work experience and personal interviews.
-
-4. MBA Placements (2025–26 Highlights)
-• Highest CTC: ₹20.12 LPA | Average CTC: ₹7.71 LPA | Median CTC: ₹7.50 LPA | Total Offers: 226.
-• Placement Trends: 2024-25 (Avg ₹7.53 LPA, Max ₹16.42 LPA) | 2023-24 (Avg ₹7.50 LPA, Max ₹16.22 LPA) | 2022-23 (Avg ₹7.30 LPA, Max ₹14.83 LPA).
-
-5. Rankings and Accreditations
-• EducationWorld: 20th among Business Schools | BusinessWorld: 22nd among Business Schools.
-• ACBSP & NBA Accredited | AICTE Approved | Anna University Affiliated.
-
-6. Campus Facilities
-Library and digital academic databases, live consulting projects, international exchange, ALPS leadership training, hostels and sports facilities.';
+    v_description := E'1. Overview\n' ||
+        'PSG Institute of Management (PSGIM) is a well-established business school located in Peelamedu, Coimbatore. Its roots go back to 1965, when it began as the Department of Management Sciences under PSG College of Technology. It became an independent institute in 1994.\n\n' ||
+        'The institute offers a two-year, full-time MBA focused on management fundamentals, practical learning and professional development. Teaching methods include case studies, internships, live consulting projects, summer projects and activity-based learning. The programme is affiliated with Anna University, approved by AICTE, and accredited by NBA and ACBSP.\n\n' ||
+        '• Location: Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004.\n' ||
+        '• Course duration: 2 years, full-time.\n' ||
+        '• Eligibility: Bachelor''s degree with a minimum of 60% aggregate; final-year students may apply provisionally.\n' ||
+        '• Official website: https://psgim.ac.in/\n\n' ||
+        '2. MBA Course and Fees Structure\n' ||
+        'Students study core management subjects in the first year and pursue specialisations and electives in the second year, culminating in a project-based dissertation.\n' ||
+        '• Specialisations: Finance, Marketing, Human Resources, Decision Science & Analytics.\n' ||
+        '• Fees: Current official 2026–27 intake fees are unverified in third-party sources. Check directly with official admissions.\n\n' ||
+        '3. MBA Admission Process\n' ||
+        'Admission considers academic performance, entrance-exam scores (CAT, MAT, ATMA, TANCET for 2026 cycle), work experience and personal interviews.\n\n' ||
+        '4. MBA Placements (2025–26 Highlights)\n' ||
+        '• Highest CTC: ₹20.12 LPA | Average CTC: ₹7.71 LPA | Median CTC: ₹7.50 LPA | Total Offers: 226.\n' ||
+        '• Placement Trends: 2024-25 (Avg ₹7.53 LPA, Max ₹16.42 LPA) | 2023-24 (Avg ₹7.50 LPA, Max ₹16.22 LPA) | 2022-23 (Avg ₹7.30 LPA, Max ₹14.83 LPA).\n\n' ||
+        '5. Rankings and Accreditations\n' ||
+        '• EducationWorld: 20th among Business Schools | BusinessWorld: 22nd among Business Schools.\n' ||
+        '• ACBSP & NBA Accredited | AICTE Approved | Anna University Affiliated.\n\n' ||
+        '6. Campus Facilities\n' ||
+        'Library and digital academic databases, live consulting projects, international exchange, ALPS leadership training, hostels and sports facilities.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -277,34 +271,29 @@ BEGIN
         'Rigorous Pedagogy: Live Industry Projects, Simulations, and Summer Internships'
     ]);
 
-    v_description := 'Amrita School of Business (ASB), Coimbatore, is the prestigious management school of Amrita Vishwa Vidyapeetham, a deemed-to-be university. The institute focuses on developing management, analytical, communication and leadership skills through academic learning and practical business exposure.
-
-• Location: Amritanagar, Ettimadai, Coimbatore, Tamil Nadu – 641112.
-• Course: Master of Business Administration (MBA), 2 years full-time (6 trimesters).
-• Specialisations: Business Analytics, Finance, Human Resources, Marketing, Operations Management.
-• Approvals & Accreditation: AACSB International Accredited, NIRF #26 in Management.
-
-2. MBA Course and Fees Structure
-The curriculum spans 6 trimesters covering core management, analytics, business simulations, and summer internships.
-• Total MBA Tuition Fee: ₹12,00,000 (Approx. ₹6,00,000 per year)
-• Caution Deposit: ₹10,000 | Hostel Fees: ~₹1,20,000 per year
-
-3. MBA Admission Process
-• Eligibility: Bachelor''s degree (10+2+3 pattern) with min 60% aggregate in 10th, 12th, and UG.
-• Accepted Exams: ACAT (Amrita Common Aptitude Test), CAT, XAT, MAT, CMAT, GMAT, GRE, NMAT.
-• Selection: Shortlisting based on exam scores followed by Personal Interview (PI).
-
-4. MBA Placements
-• Highest CTC: ₹24.84 LPA | Average CTC: ₹8.34 LPA | Median CTC: ₹7.60 LPA | Top 20% Average: ₹11.85 LPA.
-• Recruiters: Over 115 recruiters across consulting, BFSI, analytics, and FMCG.
-
-5. Rankings and Accreditations
-• NIRF 2025 Management: 26th in India.
-• AACSB International Accreditation.
-• Amrita Vishwa Vidyapeetham: NIRF 2025 #8 in Universities, #17 Overall.
-
-6. Campus Facilities
-World-class digital library, multimedia classrooms, sports grounds, residential facilities, healthcare, and corporate engagement zones.';
+    v_description := E'1. Overview\n' ||
+        'Amrita School of Business (ASB), Coimbatore, is the prestigious management school of Amrita Vishwa Vidyapeetham, a deemed-to-be university. The institute focuses on developing management, analytical, communication and leadership skills through academic learning and practical business exposure.\n\n' ||
+        '• Location: Amritanagar, Ettimadai, Coimbatore, Tamil Nadu – 641112.\n' ||
+        '• Course: Master of Business Administration (MBA), 2 years full-time (6 trimesters).\n' ||
+        '• Specialisations: Business Analytics, Finance, Human Resources, Marketing, Operations Management.\n' ||
+        '• Approvals & Accreditation: AACSB International Accredited, NIRF #26 in Management.\n\n' ||
+        '2. MBA Course and Fees Structure\n' ||
+        'The curriculum spans 6 trimesters covering core management, analytics, business simulations, and summer internships.\n' ||
+        '• Total MBA Tuition Fee: ₹12,00,000 (Approx. ₹6,00,000 per year)\n' ||
+        '• Caution Deposit: ₹10,000 | Hostel Fees: ~₹1,20,000 per year\n\n' ||
+        '3. MBA Admission Process\n' ||
+        '• Eligibility: Bachelor''s degree (10+2+3 pattern) with min 60% aggregate in 10th, 12th, and UG.\n' ||
+        '• Accepted Exams: ACAT (Amrita Common Aptitude Test), CAT, XAT, MAT, CMAT, GMAT, GRE, NMAT.\n' ||
+        '• Selection: Shortlisting based on exam scores followed by Personal Interview (PI).\n\n' ||
+        '4. MBA Placements\n' ||
+        '• Highest CTC: ₹24.84 LPA | Average CTC: ₹8.34 LPA | Median CTC: ₹7.60 LPA | Top 20% Average: ₹11.85 LPA.\n' ||
+        '• Recruiters: Over 115 recruiters across consulting, BFSI, analytics, and FMCG.\n\n' ||
+        '5. Rankings and Accreditations\n' ||
+        '• NIRF 2025 Management: 26th in India.\n' ||
+        '• AACSB International Accreditation.\n' ||
+        '• Amrita Vishwa Vidyapeetham: NIRF 2025 #8 in Universities, #17 Overall.\n\n' ||
+        '6. Campus Facilities\n' ||
+        'World-class digital library, multimedia classrooms, sports grounds, residential facilities, healthcare, and corporate engagement zones.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -479,36 +468,31 @@ BEGIN
         'Recruiters: Axis Bank, Grant Thornton, UTI Mutual Fund, SLB, Berger Paints, Accenture, Federal Bank'
     ]);
 
-    v_description := 'KCT Business School (KCTBS) is the management school of Kumaraguru College of Technology, located in Coimbatore, Tamil Nadu. Established in 2005, the business school focuses on management education, industry-oriented learning, entrepreneurship and leadership development.
-
-• Location: Kumaraguru Campus, Chinnavedampatti, Saravanampatti, Coimbatore, Tamil Nadu – 641049.
-• Established: 2005 | Affiliation: Anna University | Accreditation: NAAC A++ (Parent Institution).
-• Courses: MBA General, MBA in Project Management, MBA in Innovation, Entrepreneurship & Venture Development (IEV), MBA in Agri Business, MBA in Logistics & Supply Chain Management.
-
-2. MBA Course and Fees Structure
-Published 2025–26 1st-Year Government Quota Fee Schedule (OC/BC/BCM/MBC/DNC):
-• MBA – General: ₹2,70,000 (SC/SCA/ST: ₹2,74,000)
-• MBA – Logistics & Supply Chain Management: ₹2,70,000 (SC/SCA/ST: ₹2,74,000)
-• MBA – Agri Business Management: ₹2,70,000 (SC/SCA/ST: ₹2,74,000)
-• MBA – Project Management: ₹3,70,000 (SC/SCA/ST: ₹3,74,000)
-• MBA – Innovation, Entrepreneurship and Venture Development: ₹3,20,000 (SC/SCA/ST: ₹3,24,000)
-Note: Figures represent 1st-year fees only. 2nd-year fees and management-quota schedules subject to official confirmation.
-
-3. MBA Admission Process
-• Eligibility: Bachelor''s degree with min 60% undergraduate marks.
-• Accepted Exams: MAT, CAT, and KCTBS online entrance assessment.
-• Selection: SOP, Group Discussion (GD), and Personal Interview (PI).
-
-4. MBA Placements
-Supported by a dedicated Career Development Centre. Recruiters include Axis Bank, Grant Thornton, UTI Mutual Fund, SLB, Berger Paints, Accenture, and Federal Bank.
-
-5. Rankings and Accreditations
-• NAAC A++ Accreditation (Kumaraguru College of Technology).
-• NBA-accredited programmes under parent institution.
-• Degree awarded through Anna University.
-
-6. Campus Facilities
-Mahatma Gandhi Central Library, hostels, sports amenities, smart classrooms, and venture development incubation.';
+    v_description := E'1. Overview\n' ||
+        'KCT Business School (KCTBS) is the management school of Kumaraguru College of Technology, located in Coimbatore, Tamil Nadu. Established in 2005, the business school focuses on management education, industry-oriented learning, entrepreneurship and leadership development.\n\n' ||
+        '• Location: Kumaraguru Campus, Chinnavedampatti, Saravanampatti, Coimbatore, Tamil Nadu – 641049.\n' ||
+        '• Established: 2005 | Affiliation: Anna University | Accreditation: NAAC A++ (Parent Institution).\n' ||
+        '• Courses: MBA General, MBA in Project Management, MBA in Innovation, Entrepreneurship & Venture Development (IEV), MBA in Agri Business, MBA in Logistics & Supply Chain Management.\n\n' ||
+        '2. MBA Course and Fees Structure\n' ||
+        'Published 2025–26 1st-Year Government Quota Fee Schedule (OC/BC/BCM/MBC/DNC):\n' ||
+        '• MBA – General: ₹2,70,000 (SC/SCA/ST: ₹2,74,000)\n' ||
+        '• MBA – Logistics & Supply Chain Management: ₹2,70,000 (SC/SCA/ST: ₹2,74,000)\n' ||
+        '• MBA – Agri Business Management: ₹2,70,000 (SC/SCA/ST: ₹2,74,000)\n' ||
+        '• MBA – Project Management: ₹3,70,000 (SC/SCA/ST: ₹3,74,000)\n' ||
+        '• MBA – Innovation, Entrepreneurship and Venture Development: ₹3,20,000 (SC/SCA/ST: ₹3,24,000)\n' ||
+        'Note: Figures represent 1st-year fees only. 2nd-year fees and management-quota schedules subject to official confirmation.\n\n' ||
+        '3. MBA Admission Process\n' ||
+        '• Eligibility: Bachelor''s degree with min 60% undergraduate marks.\n' ||
+        '• Accepted Exams: MAT, CAT, and KCTBS online entrance assessment.\n' ||
+        '• Selection: SOP, Group Discussion (GD), and Personal Interview (PI).\n\n' ||
+        '4. MBA Placements\n' ||
+        'Supported by a dedicated Career Development Centre. Recruiters include Axis Bank, Grant Thornton, UTI Mutual Fund, SLB, Berger Paints, Accenture, and Federal Bank.\n\n' ||
+        '5. Rankings and Accreditations\n' ||
+        '• NAAC A++ Accreditation (Kumaraguru College of Technology).\n' ||
+        '• NBA-accredited programmes under parent institution.\n' ||
+        '• Degree awarded through Anna University.\n\n' ||
+        '6. Campus Facilities\n' ||
+        'Mahatma Gandhi Central Library, hostels, sports amenities, smart classrooms, and venture development incubation.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -671,35 +655,30 @@ BEGIN
         'Top Recruiters: Deloitte, Amazon, Barclays, ANZ, HCLTech, TCS, Cognizant, Reliance Retail, Decathlon'
     ]);
 
-    v_description := 'GRG School of Management Studies (GRGSMS) is the Department of Management of PSGR Krishnammal College for Women, located in Peelamedu, Coimbatore. Established in 1993, the institution focuses exclusively on women''s management education, leadership development, entrepreneurship and professional growth.
-
-• Location: PSGR Krishnammal College for Women, Peelamedu, Coimbatore, Tamil Nadu – 641004.
-• Established: 1993 | Type: Premier Women''s Business School.
-• Affiliation: Bharathiar University | Approvals: AICTE approved, internationally accredited by ACBSP, USA.
-
-2. MBA Course and Fees Structure
-2-year full-time MBA programmes:
-• MBA: Specialisations in Finance, Marketing, Human Resources, Entrepreneurship, and General Management.
-• MBA in Digital Media & Marketing Communications: Digital marketing, media strategy, and brand development.
-• Indicative Fees: Approximately ₹4 lakh per year (subject to confirmation by admissions office).
-
-3. MBA Admission Process
-• Eligibility: Bachelor''s degree in any discipline with minimum 50% marks.
-• Entrance Exams: MAT and TANCET.
-• Selection: Online application, entrance exam scorecard, Group Discussion (GD), and Personal Interview (PI).
-
-4. MBA Placements
-• 2025: Highest CTC ₹10.75 LPA | Average CTC ₹4.10 LPA.
-• 2024: Highest CTC ₹12.00 LPA | Average CTC ₹4.50 LPA.
-• Prominent Recruiters: Deloitte, Amazon, Barclays, ANZ, HCLTech, TCS, Cognizant, Reliance Retail, Decathlon, HDFC Bank, KPMG.
-
-5. Rankings and Accreditations
-• NIRF 2025: 9th in India (College category for parent college PSGR Krishnammal).
-• NIRF 2024: 7th in India (College category).
-• ACBSP USA International Accreditation | NAAC A++ Grade.
-
-6. Campus Facilities
-Digital library, modern classrooms, conference halls, MBAPlus leadership modules, and community immersion programmes.';
+    v_description := E'1. Overview\n' ||
+        'GRG School of Management Studies (GRGSMS) is the Department of Management of PSGR Krishnammal College for Women, located in Peelamedu, Coimbatore. Established in 1993, the institution focuses exclusively on women''s management education, leadership development, entrepreneurship and professional growth.\n\n' ||
+        '• Location: PSGR Krishnammal College for Women, Peelamedu, Coimbatore, Tamil Nadu – 641004.\n' ||
+        '• Established: 1993 | Type: Premier Women''s Business School.\n' ||
+        '• Affiliation: Bharathiar University | Approvals: AICTE approved, internationally accredited by ACBSP, USA.\n\n' ||
+        '2. MBA Course and Fees Structure\n' ||
+        '2-year full-time MBA programmes:\n' ||
+        '• MBA: Specialisations in Finance, Marketing, Human Resources, Entrepreneurship, and General Management.\n' ||
+        '• MBA in Digital Media & Marketing Communications: Digital marketing, media strategy, and brand development.\n' ||
+        '• Indicative Fees: Approximately ₹4 lakh per year (subject to confirmation by admissions office).\n\n' ||
+        '3. MBA Admission Process\n' ||
+        '• Eligibility: Bachelor''s degree in any discipline with minimum 50% marks.\n' ||
+        '• Entrance Exams: MAT and TANCET.\n' ||
+        '• Selection: Online application, entrance exam scorecard, Group Discussion (GD), and Personal Interview (PI).\n\n' ||
+        '4. MBA Placements\n' ||
+        '• 2025: Highest CTC ₹10.75 LPA | Average CTC ₹4.10 LPA.\n' ||
+        '• 2024: Highest CTC ₹12.00 LPA | Average CTC ₹4.50 LPA.\n' ||
+        '• Prominent Recruiters: Deloitte, Amazon, Barclays, ANZ, HCLTech, TCS, Cognizant, Reliance Retail, Decathlon, HDFC Bank, KPMG.\n\n' ||
+        '5. Rankings and Accreditations\n' ||
+        '• NIRF 2025: 9th in India (College category for parent college PSGR Krishnammal).\n' ||
+        '• NIRF 2024: 7th in India (College category).\n' ||
+        '• ACBSP USA International Accreditation | NAAC A++ Grade.\n\n' ||
+        '6. Campus Facilities\n' ||
+        'Digital library, modern classrooms, conference halls, MBAPlus leadership modules, and community immersion programmes.';
 
     -- Upsert College (Facilities included in INSERT to prevent NOT NULL error)
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -867,34 +846,29 @@ BEGIN
         'Regular Recruiters: Asian Paints, Berger Paints, Britannia, CavinKare, City Union Bank, Grant Thornton, ITC, Nestle, TCS'
     ]);
 
-    v_description := 'Jansons School of Business (JSB) is a management institute located in Karumathampatti, Coimbatore, Tamil Nadu. Established in 2002, the institution focuses on management education, entrepreneurship, leadership development and practical business learning.
-
-• Location: Karumathampatti, Coimbatore, Tamil Nadu – 641659.
-• Established: 2002 | Status: Autonomous Institution affiliated with Bharathiar University.
-• Approvals & Accreditation: AICTE recognised, NBA accredited, and ACBSP internationally accredited.
-
-2. MBA Course and Fees Structure
-2-year, full-time MBA programme structured across four semesters.
-• Specialisations: Finance, Human Resources, Marketing, Supply Chain Management & Operations, Business Analytics.
-• Indicative 2-Year Total Fees:
-  - Day Scholars: ₹6.5 lakh – ₹7 lakh
-  - Hostellers: ₹9.5 lakh – ₹10 lakh (including college and hostel lodging/boarding)
-
-3. MBA Admission Process
-• Eligibility: Bachelor''s degree pass from any recognised institution.
-• Accepted Exams: CAT, MAT, CMAT, ATMA, and TANCET.
-• Selection: Online application, entrance score, GD & PI (TANCET counselling candidates are exempt from GD/PI).
-
-4. MBA Placements (Published 2025–26 Data)
-• Highest CTC: ₹13.96 LPA | Average CTC: ₹5.70 LPA.
-• Prominent Recruiters: Asian Paints, Berger Paints, Britannia, CavinKare, City Union Bank, Grant Thornton, HDFC Life, HDB Financial, HomeFirst, ICICI Prudential, ITC, Nestle, Ramco Cements, TCS, Varun Beverages.
-
-5. Rankings and Accreditations
-• NBA Accredited | ACBSP USA International Accreditation | AICTE Approved.
-• Outlook-ICARE 2021: 16th among Business Schools in South Zone.
-
-6. Campus Facilities
-Library with 18,000+ volumes, computer labs, student clubs, residential campus, Centres of Excellence, and Career Commencement cell.';
+    v_description := E'1. Overview\n' ||
+        'Jansons School of Business (JSB) is a management institute located in Karumathampatti, Coimbatore, Tamil Nadu. Established in 2002, the institution focuses on management education, entrepreneurship, leadership development and practical business learning.\n\n' ||
+        '• Location: Karumathampatti, Coimbatore, Tamil Nadu – 641659.\n' ||
+        '• Established: 2002 | Status: Autonomous Institution affiliated with Bharathiar University.\n' ||
+        '• Approvals & Accreditation: AICTE recognised, NBA accredited, and ACBSP internationally accredited.\n\n' ||
+        '2. MBA Course and Fees Structure\n' ||
+        '2-year, full-time MBA programme structured across four semesters.\n' ||
+        '• Specialisations: Finance, Human Resources, Marketing, Supply Chain Management & Operations, Business Analytics.\n' ||
+        '• Indicative 2-Year Total Fees:\n' ||
+        '  - Day Scholars: ₹6.5 lakh – ₹7 lakh\n' ||
+        '  - Hostellers: ₹9.5 lakh – ₹10 lakh (including college and hostel lodging/boarding)\n\n' ||
+        '3. MBA Admission Process\n' ||
+        '• Eligibility: Bachelor''s degree pass from any recognised institution.\n' ||
+        '• Accepted Exams: CAT, MAT, CMAT, ATMA, and TANCET.\n' ||
+        '• Selection: Online application, entrance score, GD & PI (TANCET counselling candidates are exempt from GD/PI).\n\n' ||
+        '4. MBA Placements (Published 2025–26 Data)\n' ||
+        '• Highest CTC: ₹13.96 LPA | Average CTC: ₹5.70 LPA.\n' ||
+        '• Prominent Recruiters: Asian Paints, Berger Paints, Britannia, CavinKare, City Union Bank, Grant Thornton, HDFC Life, HDB Financial, HomeFirst, ICICI Prudential, ITC, Nestle, Ramco Cements, TCS, Varun Beverages.\n\n' ||
+        '5. Rankings and Accreditations\n' ||
+        '• NBA Accredited | ACBSP USA International Accreditation | AICTE Approved.\n' ||
+        '• Outlook-ICARE 2021: 16th among Business Schools in South Zone.\n\n' ||
+        '6. Campus Facilities\n' ||
+        'Library with 18,000+ volumes, computer labs, student clubs, residential campus, Centres of Excellence, and Career Commencement cell.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -1051,32 +1025,27 @@ BEGIN
         'High-Tech Business Analytics Lab with Live Simulation Terminals & Industry Dashboards'
     ]);
 
-    v_description := 'Karunya School of Management (KSM) is the management school of Karunya Institute of Technology and Sciences, a deemed-to-be university located in Coimbatore, Tamil Nadu. Established in 1994, the school focuses on management education, leadership development, industry engagement and professional skills.
-
-• Location: Karunya Nagar, Coimbatore, Tamil Nadu – 641114.
-• Established: 1994 | Status: Deemed-to-be University (KITS).
-• Course: Master of Business Administration (MBA), 2 years full-time (4 semesters).
-
-2. Course and Fees Structure
-Flagship 2-year full-time MBA across four semesters.
-• Specialisations: Finance, Marketing, Human Resource Management, International Business, Operations and Supply Chain Management, Business Analytics, Entrepreneurship.
-• Approximate Programme Fee: Total MBA fee is approx ₹6.3 lakh to ₹6.6 lakh based on published listings (hostel and exam charges extra).
-
-3. Admission
-• Eligibility: Bachelor''s degree in any discipline with minimum 50% marks.
-• Entrance Exam: Karunya Management Aptitude Test (KMAT), CAT, MAT, or TANCET.
-• Procedure: Online application, entrance exam, document verification, and fee payment.
-
-4. Placements (Published 2026 MBA Highlights)
-• Highest Salary Package: ₹17 LPA.
-• Top 30% Average Salary: ₹7.5 LPA.
-• Key Sectors: Consulting, BFSI, FMCG, IT, logistics, and analytics.
-
-5. Rankings and Accreditation
-Recognised deemed-to-be university with ACCA-accredited programme offerings.
-
-6. Facilities
-Business Analytics Lab, central library, smart seminar halls, residential facilities, and incubation support.';
+    v_description := E'1. Overview\n' ||
+        'Karunya School of Management (KSM) is the management school of Karunya Institute of Technology and Sciences, a deemed-to-be university located in Coimbatore, Tamil Nadu. Established in 1994, the school focuses on management education, leadership development, industry engagement and professional skills.\n\n' ||
+        '• Location: Karunya Nagar, Coimbatore, Tamil Nadu – 641114.\n' ||
+        '• Established: 1994 | Status: Deemed-to-be University (KITS).\n' ||
+        '• Course: Master of Business Administration (MBA), 2 years full-time (4 semesters).\n\n' ||
+        '2. Course and Fees Structure\n' ||
+        'Flagship 2-year full-time MBA across four semesters.\n' ||
+        '• Specialisations: Finance, Marketing, Human Resource Management, International Business, Operations and Supply Chain Management, Business Analytics, Entrepreneurship.\n' ||
+        '• Approximate Programme Fee: Total MBA fee is approx ₹6.3 lakh to ₹6.6 lakh based on published listings (hostel and exam charges extra).\n\n' ||
+        '3. Admission\n' ||
+        '• Eligibility: Bachelor''s degree in any discipline with minimum 50% marks.\n' ||
+        '• Entrance Exam: Karunya Management Aptitude Test (KMAT), CAT, MAT, or TANCET.\n' ||
+        '• Procedure: Online application, entrance exam, document verification, and fee payment.\n\n' ||
+        '4. Placements (Published 2026 MBA Highlights)\n' ||
+        '• Highest Salary Package: ₹17 LPA.\n' ||
+        '• Top 30% Average Salary: ₹7.5 LPA.\n' ||
+        '• Key Sectors: Consulting, BFSI, FMCG, IT, logistics, and analytics.\n\n' ||
+        '5. Rankings and Accreditation\n' ||
+        'Recognised deemed-to-be university with ACCA-accredited programme offerings.\n\n' ||
+        '6. Facilities\n' ||
+        'Business Analytics Lab, central library, smart seminar halls, residential facilities, and incubation support.';
 
     -- Upsert College (Facilities included in INSERT to prevent NOT NULL error)
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -1231,33 +1200,27 @@ BEGIN
         'Comprehensive University Placement Bureau & Career Development Initiatives'
     ]);
 
-    v_description := 'Bharathiar University is a state university located on Marudhamalai Road in Coimbatore, Tamil Nadu. Established in 1982, the university offers postgraduate programmes across various disciplines, including management studies.
-
-The university provides MBA education through its university departments and its Centre for Distance and Online Education (CDOE). Students can choose a learning mode based on their career goals, work commitments and educational requirements.
-
-• Location: Marudhamalai Road, Coimbatore, Tamil Nadu – 641046.
-• Established: 1982 | Status: State University recognised by UGC with NAAC A++ grade.
-• Modes: Regular (Campus), Distance Education (ODL), and Online MBA.
-
-2. Course and Fees Structure
-• Regular MBA: 2-Year campus programme covering Marketing, Finance, HR, and Operations.
-• Distance MBA (ODL): Total course fee ₹52,630.
-• Online MBA: Total course fee ₹71,030.
-Note: Regular MBA tuition and university fee schedules follow Tamil Nadu state university norms.
-
-3. Admission
-• Regular MBA: Bachelor''s degree pass + TANCET examination and single-window counselling.
-• Distance & Online MBA: Direct application through Bharathiar University CDOE portal.
-
-4. Placements
-University-level placement bureau facilitates recruitment drives for campus students in marketing, finance, analytics, and business development.
-
-5. Rankings and Accreditation
-• UGC recognised State University.
-• NAAC A++ Grade accreditation.
-
-6. Facilities
-University library, computer labs, research facilities, sports amenities, and dedicated distance learning online portals.';
+    v_description := E'1. Overview\n' ||
+        'Bharathiar University is a state university located on Marudhamalai Road in Coimbatore, Tamil Nadu. Established in 1982, the university offers postgraduate programmes across various disciplines, including management studies.\n\n' ||
+        'The university provides MBA education through its university departments and its Centre for Distance and Online Education (CDOE). Students can choose a learning mode based on their career goals, work commitments and educational requirements.\n\n' ||
+        '• Location: Marudhamalai Road, Coimbatore, Tamil Nadu – 641046.\n' ||
+        '• Established: 1982 | Status: State University recognised by UGC with NAAC A++ grade.\n' ||
+        '• Modes: Regular (Campus), Distance Education (ODL), and Online MBA.\n\n' ||
+        '2. Course and Fees Structure\n' ||
+        '• Regular MBA: 2-Year campus programme covering Marketing, Finance, HR, and Operations.\n' ||
+        '• Distance MBA (ODL): Total course fee ₹52,630.\n' ||
+        '• Online MBA: Total course fee ₹71,030.\n' ||
+        'Note: Regular MBA tuition and university fee schedules follow Tamil Nadu state university norms.\n\n' ||
+        '3. Admission\n' ||
+        '• Regular MBA: Bachelor''s degree pass + TANCET examination and single-window counselling.\n' ||
+        '• Distance & Online MBA: Direct application through Bharathiar University CDOE portal.\n\n' ||
+        '4. Placements\n' ||
+        'University-level placement bureau facilitates recruitment drives for campus students in marketing, finance, analytics, and business development.\n\n' ||
+        '5. Rankings and Accreditation\n' ||
+        '• UGC recognised State University.\n' ||
+        '• NAAC A++ Grade accreditation.\n\n' ||
+        '6. Facilities\n' ||
+        'University library, computer labs, research facilities, sports amenities, and dedicated distance learning online portals.';
 
     -- Upsert College (Facilities included in INSERT to prevent NOT NULL error)
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
@@ -1390,29 +1353,24 @@ BEGIN
         'Strong Corporate Partnerships Across Manufacturing, Banking, IT & Consulting Sectors'
     ]);
 
-    v_description := 'Coimbatore Institute of Technology (CIT) is a government-aided, autonomous engineering and technology institution located on Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu. Established in 1956, CIT offers a two-year, full-time Master of Business Administration (MBA) programme designed to develop managerial skills, business knowledge and leadership capabilities.
-
-• Location: Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641014.
-• Established: 1956 | Status: Government-aided, autonomous affiliated with Anna University.
-• Course: Master of Business Administration (MBA), 2 years full-time (4 semesters).
-
-2. Course and Fees Structure (Published 2025–26 Schedule):
-• Semester 1: ₹1,08,900 | Semester 2: ₹1,02,300
-• Semester 3: ₹1,05,815 | Semester 4: ₹1,02,300
-• Total 2-Year Programme Fee: ₹4,19,315
-
-3. Admission
-• Eligibility: Recognised bachelor''s degree of at least 3 years with min 50% marks (45% for reserved categories).
-• Entrance Exam: TANCET (Tamil Nadu MBA counselling through DoTE).
-
-4. Placements
-Dedicated placement cell connects students to recruitment drives in banking, financial services, consulting, FMCG, and technology.
-
-5. Rankings and Accreditation
-Government-aided autonomous status; Anna University affiliated; AICTE approved.
-
-6. Facilities
-Central library, computing labs, smart lecture halls, hostels, and sports facilities.';
+    v_description := E'1. Overview\n' ||
+        'Coimbatore Institute of Technology (CIT) is a government-aided, autonomous engineering and technology institution located on Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu. Established in 1956, CIT offers a two-year, full-time Master of Business Administration (MBA) programme designed to develop managerial skills, business knowledge and leadership capabilities.\n\n' ||
+        '• Location: Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641014.\n' ||
+        '• Established: 1956 | Status: Government-aided, autonomous affiliated with Anna University.\n' ||
+        '• Course: Master of Business Administration (MBA), 2 years full-time (4 semesters).\n\n' ||
+        '2. Course and Fees Structure (Published 2025–26 Schedule):\n' ||
+        '• Semester 1: ₹1,08,900 | Semester 2: ₹1,02,300\n' ||
+        '• Semester 3: ₹1,05,815 | Semester 4: ₹1,02,300\n' ||
+        '• Total 2-Year Programme Fee: ₹4,19,315\n\n' ||
+        '3. Admission\n' ||
+        '• Eligibility: Recognised bachelor''s degree of at least 3 years with min 50% marks (45% for reserved categories).\n' ||
+        '• Entrance Exam: TANCET (Tamil Nadu MBA counselling through DoTE).\n\n' ||
+        '4. Placements\n' ||
+        'Dedicated placement cell connects students to recruitment drives in banking, financial services, consulting, FMCG, and technology.\n\n' ||
+        '5. Rankings and Accreditation\n' ||
+        'Government-aided autonomous status; Anna University affiliated; AICTE approved.\n\n' ||
+        '6. Facilities\n' ||
+        'Central library, computing labs, smart lecture halls, hostels, and sports facilities.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug OR slug = 'coimbatore-institute-of-technology' LIMIT 1;
@@ -1577,26 +1535,21 @@ BEGIN
         'Top MBA Recruiters: BNY, EY, Grant Thornton, Veritas Finance, Home First, IndiaMart, TCS, D-Mart, Bajaj Finserv'
     ]);
 
-    v_description := 'Sri Krishna College of Engineering and Technology (SKCET) is an autonomous institution located in Kuniamuthur, Coimbatore, Tamil Nadu. Established in 1998, the college is affiliated with Anna University and offers a two-year, full-time Master of Business Administration (MBA) programme designed to develop managerial expertise and leadership abilities.
-
-• Location: Kuniamuthur, Coimbatore, Tamil Nadu – 641008.
-• Established: 1998 | Autonomous | NAAC A++ Grade | Anna University Affiliated.
-
-2. Course and Fees Structure
-4-semester MBA curriculum covering Marketing, Finance, HR, Operations, Business Analytics, Strategy & Entrepreneurship. Fees as per college and government guidelines.
-
-3. Admission
-Bachelor''s degree (3 years) with min 50% marks (45% for reserved category). Admission through TANCET counselling.
-
-4. Placements (Published 2025–26 MBA Data)
-• Highest Salary Package: ₹10.10 LPA | Average Salary Package: ₹5.00 LPA.
-• Recruiters: BNY, EY, Grant Thornton, Veritas Finance, Home First Finance, IndiaMart, City Union Bank, TCS, D-Mart, Bajaj Finserv, EClerx.
-
-5. Rankings and Accreditation
-NAAC A++ Grade; Autonomous institution; NBA accredited programmes; AICTE approved.
-
-6. Facilities
-Digital library, computing facilities, lecture halls, hostels, sports, and career development support.';
+    v_description := E'1. Overview\n' ||
+        'Sri Krishna College of Engineering and Technology (SKCET) is an autonomous institution located in Kuniamuthur, Coimbatore, Tamil Nadu. Established in 1998, the college is affiliated with Anna University and offers a two-year, full-time Master of Business Administration (MBA) programme designed to develop managerial expertise and leadership abilities.\n\n' ||
+        '• Location: Kuniamuthur, Coimbatore, Tamil Nadu – 641008.\n' ||
+        '• Established: 1998 | Autonomous | NAAC A++ Grade | Anna University Affiliated.\n\n' ||
+        '2. Course and Fees Structure\n' ||
+        '4-semester MBA curriculum covering Marketing, Finance, HR, Operations, Business Analytics, Strategy & Entrepreneurship. Fees as per college and government guidelines.\n\n' ||
+        '3. Admission\n' ||
+        'Bachelor''s degree (3 years) with min 50% marks (45% for reserved category). Admission through TANCET counselling.\n\n' ||
+        '4. Placements (Published 2025–26 MBA Data)\n' ||
+        '• Highest Salary Package: ₹10.10 LPA | Average Salary Package: ₹5.00 LPA.\n' ||
+        '• Recruiters: BNY, EY, Grant Thornton, Veritas Finance, Home First Finance, IndiaMart, City Union Bank, TCS, D-Mart, Bajaj Finserv, EClerx.\n\n' ||
+        '5. Rankings and Accreditation\n' ||
+        'NAAC A++ Grade; Autonomous institution; NBA accredited programmes; AICTE approved.\n\n' ||
+        '6. Facilities\n' ||
+        'Digital library, computing facilities, lecture halls, hostels, sports, and career development support.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug OR slug = 'sri-krishna-college-of-engineering-and-technology' LIMIT 1;
@@ -1763,32 +1716,27 @@ BEGIN
         'India Today 2024: Ranked #1 in Coimbatore, #2 in Tamil Nadu & #7 in South India (Govt B-Schools)'
     ]);
 
-    v_description := 'Sardar Vallabhbhai Patel International School of Textiles and Management (SVPISTM) is a national-level institution established in 2002 by the Government of India’s Ministry of Textiles. Located in Coimbatore, Tamil Nadu, the institute specialises in management education, training, research and consultancy related to the textile, apparel, retail and manufacturing industries.
-
-• Location: 1483, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004.
-• Established: 2002 | Ministry of Textiles, Govt of India | NAAC B+ | AICTE Approved.
-
-2. Course and Fees Structure
-2-year full-time specialised MBA programmes:
-• MBA in Textile Management | MBA in Apparel Management | MBA in Retail Management | MBA in Technical Textile Management | MBA in Textile Business Analytics.
-• Published Semester Fee Schedule:
-  - Sem 1: ₹55,000 | Sem 2: ₹50,000 | Sem 3: ₹51,000 | Sem 4: ₹50,000
-  - Total 2-Year Programme Fee: ₹2,06,000
-
-3. Admission
-• Eligibility: Bachelor''s degree in any discipline with min 50% (45% for OBC-NCL/EWS, 40% for SC/ST/PwD).
-• Accepted Exams: CUET-PG, SVPISTM Entrance Test, MAT, CAT, TANCET.
-
-4. Placements (Published 2024–25 Graduating Batch)
-• Students Graduated: 94 | Students Placed: 80 | Median Salary Package: ₹4.60 LPA.
-• Recruiters: Textile mills, garment exporters, retail corporations, supply chain agencies.
-
-5. Rankings and Accreditation
-• India Today 2024: 1st in Coimbatore, 2nd in Tamil Nadu, 7th in South India (Government B-School Excellence category).
-• Ministry of Textiles, Govt of India; AICTE approved; NAAC B+.
-
-6. Facilities
-Textile laboratories, digital library, computer facilities, hostels, and industry-oriented training.';
+    v_description := E'1. Overview\n' ||
+        'Sardar Vallabhbhai Patel International School of Textiles and Management (SVPISTM) is a national-level institution established in 2002 by the Government of India’s Ministry of Textiles. Located in Coimbatore, Tamil Nadu, the institute specialises in management education, training, research and consultancy related to the textile, apparel, retail and manufacturing industries.\n\n' ||
+        '• Location: 1483, Avinashi Road, Peelamedu, Coimbatore, Tamil Nadu – 641004.\n' ||
+        '• Established: 2002 | Ministry of Textiles, Govt of India | NAAC B+ | AICTE Approved.\n\n' ||
+        '2. Course and Fees Structure\n' ||
+        '2-year full-time specialised MBA programmes:\n' ||
+        '• MBA in Textile Management | MBA in Apparel Management | MBA in Retail Management | MBA in Technical Textile Management | MBA in Textile Business Analytics.\n' ||
+        '• Published Semester Fee Schedule:\n' ||
+        '  - Sem 1: ₹55,000 | Sem 2: ₹50,000 | Sem 3: ₹51,000 | Sem 4: ₹50,000\n' ||
+        '  - Total 2-Year Programme Fee: ₹2,06,000\n\n' ||
+        '3. Admission\n' ||
+        '• Eligibility: Bachelor''s degree in any discipline with min 50% (45% for OBC-NCL/EWS, 40% for SC/ST/PwD).\n' ||
+        '• Accepted Exams: CUET-PG, SVPISTM Entrance Test, MAT, CAT, TANCET.\n\n' ||
+        '4. Placements (Published 2024–25 Graduating Batch)\n' ||
+        '• Students Graduated: 94 | Students Placed: 80 | Median Salary Package: ₹4.60 LPA.\n' ||
+        '• Recruiters: Textile mills, garment exporters, retail corporations, supply chain agencies.\n\n' ||
+        '5. Rankings and Accreditation\n' ||
+        '• India Today 2024: 1st in Coimbatore, 2nd in Tamil Nadu, 7th in South India (Government B-School Excellence category).\n' ||
+        '• Ministry of Textiles, Govt of India; AICTE approved; NAAC B+.\n\n' ||
+        '6. Facilities\n' ||
+        'Textile laboratories, digital library, computer facilities, hostels, and industry-oriented training.';
 
     -- Upsert College
     SELECT id INTO v_college_id FROM colleges WHERE slug = v_slug LIMIT 1;
